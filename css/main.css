@@ -1,0 +1,211 @@
+/* مكون الجدول الزمني المخصص */
+.timeline-card {
+  position: relative; /* تحديد موقع العنصر بالنسبة للعناصر الأخرى */
+  margin-left: 16px; /* إضافة مسافة من اليسار */
+}
+
+.timeline-card:before {
+  content: ''; /* إنشاء عنصر افتراضي */
+  display: inline-block; /* عرض العنصر بشكل كتلة داخل السطر */
+  position: absolute; /* تحديد الموقع بشكل مطلق بالنسبة للعنصر الأب */
+  background-color: #fff; /* لون خلفية العنصر */
+  border-radius: 100%; /* جعل الشكل دائري */
+  width: 24px; /* عرض العنصر */
+  height: 24px; /* ارتفاع العنصر */
+  top: 16px; /* المسافة من الجزء العلوي */
+  left: -12px; /* المسافة من الجانب الأيسر */
+  border: 5px solid; /* إطار حول العنصر */
+  z-index: 2; /* تحديد ترتيب العنصر في الواجهة */
+}
+
+/* جسم الجدول الزمني */
+.timeline-body {
+  border-left: 2px solid #E6E9ED; /* إضافة حد على الجانب الأيسر */
+}
+
+/* إعدادات الألوان للبطاقات المختلفة */
+.timeline-card-primary:before { border-color: var(--bs-primary); }
+.timeline-card-info:before { border-color: var(--bs-info); }
+.timeline-card-secondary:before { border-color: var(--bs-secondary); }
+.timeline-card-success:before { border-color: var(--bs-teal); }
+
+/* إعدادات السلوك عند التمرير */
+html {
+  scroll-behavior: smooth; /* جعل التمرير سلس */
+}
+
+/* منع التمرير الأفقي */
+html, body {
+  overflow-x: hidden; /* إخفاء التمرير الأفقي */
+}
+
+/* إعدادات الحاوية */
+.container {
+  max-width: 1140px; /* تحديد الحد الأقصى للعرض */
+}
+
+/* إعدادات عنوان الموقع */
+.site-title {
+  font-size: 1.25rem; /* حجم الخط */
+  line-height: 2.5rem; /* ارتفاع السطر */
+}
+
+/* إعدادات روابط التنقل */
+.nav-link {
+  padding: 0; /* إزالة الحشو */
+  font-size: 1rem; /* حجم الخط */
+  line-height: 2.5rem; /* ارتفاع السطر */
+  color: inherit; /* وراثة اللون من العنصر الأب */
+  opacity: 0.8; /* مستوى الشفافية */
+}
+
+/* إعدادات روابط وسائل التواصل في الرأس */
+.header-social .nav-link {
+  font-size: 1.25rem; /* حجم الخط أكبر */
+}
+
+/* تأثير التمرير على الروابط */
+.nav-link:hover,
+.nav-link:focus {
+  color: inherit; /* الحفاظ على اللون */
+  opacity: 1; /* زيادة الشفافية عند التمرير */
+}
+
+/* إضافة مسافة بين العناصر */
+.nav-item + .nav-item {
+  margin-left: 1rem; /* إضافة مسافة من اليسار */
+}
+
+/* إعدادات الغلاف */
+.cover {
+  height: 500px; /* ارتفاع الغلاف */
+}
+
+.cover > img {
+  object-fit: cover; /* ملاءمة الصورة لتغطي العنصر */
+  width: auto; /* عرض تلقائي */
+}
+
+/* إعدادات شريط التقدم */
+.progress-bar {
+  text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
+  font-size: 10px; /* حجم الخط */
+  letter-spacing: 1px; /* تباعد الحروف */
+}
+
+/* إعدادات النص الصغير */
+.text-small {
+  font-size: 0.85rem; /* حجم الخط الصغير */
+}
+
+/* إعدادات اللون */
+.text-teal {
+  color: var(--bs-teal); /* تعيين اللون */
+}
+
+/* إعدادات الروابط في التذييل */
+footer a:not(.nav-link) {
+  color: inherit; /* وراثة اللون */
+  border-bottom: 1px dashed; /* إضافة خط متقطع تحت الرابط */
+  text-decoration: none; /* إزالة التزيين */
+  cursor: pointer; /* تغيير شكل المؤشر عند المرور */
+}
+
+/* إعدادات الوسائط لعرض أكبر من 48em */
+@media (min-width: 48em) {
+  .site-title { float: left; } /* محاذاة العنوان إلى اليسار */
+  .site-nav { float: right; } /* محاذاة التنقل إلى اليمين */
+}
+
+/* إعدادات الوسائط لأجهزة المحمول */
+@media (max-width: 767px) {
+  /* تعطيل الرسوم المتحركة على الهواتف المحمولة */
+  [data-aos] {
+    opacity: 1 !important; /* تعيين الشفافية */
+    transform: translate(0) scale(1) !important; /* تعيين التحولات */
+  }
+  .p-5 {
+    padding: 2.5rem 2rem !important; /* تعديل الحشو */
+  }
+  .portfolio-section .m-5 {
+    margin: 2rem 0 1rem !important; /* تعديل الهوامش */
+  }
+  .portfolio-reverse {
+    flex-direction: column-reverse; /* تغيير اتجاه المرونة */
+  }
+  .portfolio-reverse .text-end {
+    text-align: start !important; /* تغيير محاذاة النص */
+  }
+}
+
+/* إعدادات الطباعة */
+@media print {
+  [data-aos] {
+    opacity: 1 !important; /* تعيين الشفافية */
+    transform: translate(0) scale(1) !important; /* تعيين التحولات */
+  }
+  body.bg-light {
+    background-color: #fff !important; /* تعيين لون الخلفية */
+  }
+  .container {
+    width: auto; /* عرض تلقائي */
+    max-width: 100%; /* عرض أقصى 100% */
+    padding: 0; /* إزالة الحشو */
+  }
+  .cover {
+    height: 360px; /* ارتفاع الغلاف عند الطباعة */
+    margin-bottom: 1.5rem; /* إضافة مسافة من الأسفل */
+  }
+  .cover > img {
+    display: none; /* إخفاء الصورة عند الطباعة */
+  }
+  .shadow-1-strong {
+    box-shadow: none !important; /* إزالة الظل */
+  }
+  .resume-container > .my-5 {
+    margin: 0 !important; /* إزالة الهوامش */
+  }
+  .my-5.p-5 {
+    padding: 1.5rem 0 !important; /* تعديل الحشو */
+  }
+  .about-section {
+    padding: 0 !important; /* إزالة الحشو */
+  }
+  .skills-section,
+  .work-experience-section,
+  .education-section,
+  .portfolio-section,
+  .reference-section,
+  .contact-section {
+    padding: 0 !important; /* إزالة الحشو */
+  }
+  .page-break {
+    padding-top: 5rem; /* إضافة مسافة من الأعلى */
+    page-break-before: always; /* إضافة انقطاع الصفحة قبل هذا العنصر */
+  }
+}
+
+/* إعدادات الوسائط لعرض أقل من 1024px */
+@media screen and (max-width: 1024px) { 
+  /* CSS FOR Max WIDTH 1024Px */
+}
+
+/* إعدادات الوسائط لعرض أقل من 768px */
+@media screen and (max-width: 768px) { 
+  /* CSS FOR Max WIDTH 768Px */
+}
+
+/* إعدادات الوسائط لعرض أقل من 640px */
+@media screen and (max-width: 640px) { 
+  /* CSS FOR Max WIDTH 640Px */
+}
+
+/* إعدادات الوسائط لعرض أقل من 480px */
+@media screen and (max-width: 480px) { 
+  /* CSS FOR Max WIDTH 480Px */
+}
+
+/* إعدادات الوسائط لعرض أقل من 320px */
+@media screen and (max-width: 320px) { 
+  /* CSS FOR Max WIDTH 320Px */
+}

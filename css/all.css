@@ -1,0 +1,88 @@
+/* تعريف الأنماط الأساسية لجميع رموز Font Awesome */
+.fa,
+.fas,
+.far,
+.fal,
+.fad,
+.fab {
+  display: inline-block; /* يجعل العناصر تظهر في خط واحد */
+  font-style: normal; /* يستخدم نمط الخط العادي */
+  font-variant: normal; /* يستخدم الشكل العادي للخط */
+  line-height: 1; /* يحدد ارتفاع السطر */
+}
+
+/* حجم الخط الكبير للرموز */
+.fa-lg {
+  font-size: 1.33333em; /* حجم الخط أكبر بنسبة 33.33% */
+  line-height: 0.75em; /* ارتفاع السطر أقل */
+  vertical-align: -.0667em; /* يوازن الرمز عموديًا */
+}
+
+/* تنسيق الرموز ذات العرض الثابت */
+.fa-fw {
+  text-align: center; /* محاذاة النص في المنتصف */
+  width: 1.25em; /* عرض ثابت للرمز */
+}
+
+/* تأثير دوران الرموز */
+.fa-spin {
+  animation: fa-spin 2s infinite linear; /* يضيف تأثير دوران مستمر */
+}
+
+/* تعريف حركة الدوران */
+@keyframes fa-spin {
+  0% { transform: rotate(0deg); } /* البداية */
+  100% { transform: rotate(360deg); } /* النهاية */
+}
+
+/* إعدادات لتكديس الرموز فوق بعضها */
+.fa-stack {
+  display: inline-block; /* يجعل العناصر تظهر في خط واحد */
+  height: 2em; /* ارتفاع ثابت */
+  position: relative; /* يسمح بتحديد موضع العناصر الداخلية */
+  width: 2.5em; /* عرض ثابت */
+}
+
+/* تغيير لون الرموز إلى الأبيض */
+.fa-inverse {
+  color: #fff; /* يحدد لون الرموز إلى الأبيض */
+}
+
+/* تعريف الخطوط المستخدمة في Font Awesome */
+@font-face {
+  font-family: 'Font Awesome 5 Free'; /* اسم الخط */
+  font-style: normal; /* نمط الخط عادي */
+  font-weight: 400; /* وزن الخط */
+  src: url("../webfonts/fa-regular-400.eot"); /* مصدر الخط */
+  src: url("../webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), /* تنسيق الخط */
+       url("../webfonts/fa-regular-400.woff2") format("woff2"), /* تنسيق الخط */
+       url("../webfonts/fa-regular-400.woff") format("woff"), /* تنسيق الخط */
+       url("../webfonts/fa-regular-400.ttf") format("truetype"), /* تنسيق الخط */
+       url("../webfonts/fa-regular-400.svg#fontawesome") format("svg"); /* تنسيق الخط */
+}
+
+/* تنسيق الرموز ذات الوزن العادي */
+.far {
+  font-family: 'Font Awesome 5 Free'; /* اسم الخط */
+  font-weight: 400; /* وزن الخط عادي */
+}
+
+/* تعريف الخطوط المستخدمة في Font Awesome للوزن العريض */
+@font-face {
+  font-family: 'Font Awesome 5 Free'; /* اسم الخط */
+  font-style: normal; /* نمط الخط عادي */
+  font-weight: 900; /* وزن الخط عريض */
+  src: url("../webfonts/fa-solid-900.eot"); /* مصدر الخط */
+  src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), /* تنسيق الخط */
+       url("../webfonts/fa-solid-900.woff2") format("woff2"), /* تنسيق الخط */
+       url("../webfonts/fa-solid-900.woff") format("woff"), /* تنسيق الخط */
+       url("../webfonts/fa-solid-900.ttf") format("truetype"), /* تنسيق الخط */
+       url("../webfonts/fa-solid-900.svg#fontawesome") format("svg"); /* تنسيق الخط */
+}
+
+/* تنسيق الرموز ذات الوزن العريض */
+.fa,
+.fas {
+  font-family: 'Font Awesome 5 Free'; /* اسم الخط */
+  font-weight: 900; /* وزن الخط عريض */
+}
